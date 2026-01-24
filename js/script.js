@@ -51,9 +51,10 @@ function goToPreview() {
         cEmail: document.querySelector(".cEmail")?.value || "",
         address: document.querySelector(".address")?.value || "",
         order: document.querySelector("select[name='order']")?.value || "",
-        date: document.querySelector(".date")?.value || "",
+        issueDate: document.querySelector(".issueDate")?.value || "",
         oDate: document.querySelector(".oDate")?.value || "",
         cDate: document.querySelector(".cDate")?.value || "",
+        certificatNo: document.querySelector(".certificatNo")?.value || "",
         items
     };
 

@@ -11,6 +11,10 @@ if (!data) {
     window.location.href = "../html/index.html";
 }
 
+// Fill certificate details
+document.querySelector(".certificatNo").innerText = data.certificatNo || "";
+document.querySelector(".issueDate").innerText = data.issueDate || "";
+
 // Fill client details
 document.querySelector(".name").innerText = data.name || "";
 document.querySelector(".address").innerText = data.address || "";
@@ -33,7 +37,7 @@ data.items.forEach((item, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
         <td>${index + 1}</td>
-        <td>${item.cap}</td>
+        <td>${item.cap}KG</td>
         <td>${item.type}</td>
     `;
     tbody.appendChild(tr);

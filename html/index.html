@@ -34,8 +34,8 @@
     <!-- preview & name of the web -->
     <div class="nav-perview-container">
         <span>
-            <h1>Invoice Generator</h1>
-            <p>Create professional Invoices Quickly</p>
+            <h1>Certificate Generator</h1>
+            <p>Create professional Certificate Quickly</p>
         </span>
         <!-- add preview icon into btn  -->
         <button class="preview-btn" onclick="goToPreview()">Preview</button>
@@ -47,15 +47,15 @@
 
         <!-- invoice details container -->
         <div class="invoice-details-conrainer">
-            <h3>Invoice Details</h3>
+            <h3>Certificate Details</h3>
             <form>
                 <div class="invoice-no">
-                    <label>Invoice Number</label>
-                    <input type="text" name="invoice_no" placeholder="Invoice Number">
+                    <label>Certificate Number</label>
+                    <input type="text" class="certificatNo" name="invoice_no" placeholder="Invoice Number">
                 </div>
                 <div class="invoice-date">
-                    <label>Date</label>
-                    <input type="date" class="date">
+                    <label>Issue Date</label>
+                    <input type="date" class="issueDate">
                 </div>
             </form>
         </div>
@@ -63,7 +63,6 @@
 
         <!-- user container -->
         <div class="user-container">
-            <h3>form & To</h3>
             <div class="user-sub-con">
                 <!-- client container -->
                 <div class="to-client-container">
@@ -71,8 +70,6 @@
                     <form>
                         <label>Name</label>
                         <input type="text" class="name" name="name" placeholder="Client name or company">
-                        <label>Email</label>
-                        <input type="email" class="cEmail" name="email" placeholder="client@email.com">
                         <label>Address</label>
                         <input type="text" class="address" placeholder="Address">
                         <label>Select Your Order</label>
