@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <!-- style | css  -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <!-- Intro Overlay -->
+    <div class="intro-overlay" id="introOverlay">
+        <div class="intro-card">
+            <h2>Welcome 👋</h2><br>
+            <div class="massage-container">
+                <p class="fe">This tool helps you to generate Certificate quickly.</p>
+                <h3 class="step">Steps</h2>
+                <p>• Add client details <br>
+                • Add Capacity & Type <br>
+                • Preview & download PDF</p>
+            </div>
+            <div class="note-container">
+                <h3 class="inp-note">Importent Note</h2>
+                    <p class="note">If you Think to Add Items more than 3, You should make 3 Items Certificate At-first,
+                        Then
+                        make rest Items Certificate.</p>
+            </div>
+            <button id="closeIntro">Got it</button>
+        </div>
+    </div>
+
+    <!-- preview & name of the web -->
+    <div class="nav-perview-container">
+        <span>
+            <h1>Invoice Generator</h1>
+            <p>Create professional Invoices Quickly</p>
+        </span>
+        <!-- add preview icon into btn  -->
+        <button class="preview-btn" onclick="goToPreview()">Preview</button>
+    </div>
+
+
+    <!-- main container of Invoice -->
+    <div class="main-container">
+
+        <!-- invoice details container -->
+        <div class="invoice-details-conrainer">
+            <h3>Invoice Details</h3>
+            <form>
+                <div class="invoice-no">
+                    <label>Invoice Number</label>
+                    <input type="text" name="invoice_no" placeholder="Invoice Number">
+                </div>
+                <div class="invoice-date">
+                    <label>Date</label>
+                    <input type="date" class="date">
+                </div>
+            </form>
+        </div>
+
+
+        <!-- user container -->
+        <div class="user-container">
+            <h3>form & To</h3>
+            <div class="user-sub-con">
+                <!-- client container -->
+                <div class="to-client-container">
+                    <h3>To (Client Details)</h3>
+                    <form>
+                        <label>Name</label>
+                        <input type="text" class="name" name="name" placeholder="Client name or company">
+                        <label>Email</label>
+                        <input type="email" class="cEmail" name="email" placeholder="client@email.com">
+                        <label>Address</label>
+                        <input type="text" class="address" placeholder="Address">
+                        <label>Select Your Order</label>
+                        <select name="order" class="name">
+                            <option value="Extinguisher Refilled">Extinguisher Refilled</option>
+                            <option value="New Extinguisher Installation">New Extinguisher Installation</option>
+                        </select>
+                        <label>Opening Date</label>
+                        <input type="date" class="oDate">
+                        <label>Closeing Date</label>
+                        <input type="date" class="cDate">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Invoice items -->
+        <div class="invoice-items-container">
+            <div class="top-part">
+                <h3>Invoice Items</h3>
+                <!-- add Add icon into btn -->
+                <button class="add-items">Add Items</button>
+            </div>
+            <!-- more items container -->
+            <div class="items-container">
+                <div class="item-field row">
+                    <label>Capacity</label>
+                    <input type="text" class="cap" placeholder="Capacity">
+                </div>
+                <div class="item-field row">
+                    <label>Type</label>
+                    <input type="text" class="type" placeholder="Type">
+                </div>
+                <div class="delete-items">X</div>
+            </div>
+        </div>
+
+</body>
+<!-- logic | js -->
+<script src="../js/script.js"></script>
+
+</html>

@@ -1,0 +1,297 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PAGE */
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+    overflow-x: hidden;
+}
+
+/* INVOICE CARD */
+.invoice-card {
+    max-width: 900px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 30px;
+    /* border-radius: 8px; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------------- TOP SECTION ---------------- */
+.top-section {
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.top-section h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* ABOUT */
+.about {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* MARKING */
+.marking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+#brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/* CERTIFICATE TEXT */
+.certificat-text {
+    margin-top: 15px;
+}
+
+.certificat-text p:first-child {
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.certificat-text p:last-child {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* ---------------- MAIN SECTION ---------------- */
+.main-section {
+    margin-top: 25px;
+}
+
+/* CLIENT */
+.client {
+    font-size: 14px;
+}
+
+/* CLIENT NAME */
+.client-name,
+.clitnt-address {
+    padding: 10px 0px;
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.client-name>p,
+.clitnt-address>p {
+    width: 70px;
+}
+
+.name,
+.address {
+    width: 100%;
+    border-bottom: solid 2px #55555542;
+}
+
+/* TABLE */
+.items-table {
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    font-weight: 600;
+}
+
+/* DATE SECTION */
+.date-container {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+.start-date,
+.closeing-date {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 8px;
+}
+
+/* ---------------- FOOTER SECTION ---------------- */
+.footer-section {
+    margin-top: 30px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+/* DECLARATION */
+.declaration p:first-child {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.declaration p:last-child {
+    font-size: 12px;
+    line-height: 1.6;
+    color: #444;
+}
+
+/* STAMP & SIGNATURE */
+.stamp-sing {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+    height: 80px;
+    border-top: 1px dashed #aaa;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #555;
+}
+
+
+/* -------------navbar----------- */
+.nav-perview-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.nav-perview-container {
+    top: 0;
+    z-index: 100;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* Title section */
+.nav-title h1 {
+    font-size: 20px;
+    margin: 0;
+    color: #111827;
+}
+
+.nav-title p {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Button container */
+.nav-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Common button style */
+.nav-actions button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+/* Back button */
+.edit-btn {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.edit-btn:hover {
+    background: #e5e7eb;
+}
+
+/* Download button */
+.download-btn {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.download-btn:hover {
+    background: #1d4ed8;
+}
+
+.top-section > h1{
+    color: rgb(207, 17, 17);
+    font-size: 38px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+.mob-num{
+    color: rgb(146, 9, 9);
+    font-weight: bold;
+}
+
+.gstin{
+    font-weight: bold;
+    color: black;
+}
+.red-border{
+    background-color: rgb(182, 15, 15);
+    max-width: 900px;
+    margin: auto;
+    padding: 10px;
+}
+
+.main-border{
+    background-color: #1d4ed8;
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+.o-date,
+.c-date{
+    display: inline;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: bold;
+    margin: 0 4px;
+    white-space: nowrap;
+}
