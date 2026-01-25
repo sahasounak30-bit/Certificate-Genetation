@@ -1,48 +1,81 @@
-async function downloadPDF() {
+// ================= PDF PAGINATION LOGIC =================
 
-    const pdfWrapper = document.querySelector(".pdf-wrapper");
+// how many items per page
+const ITEMS_PER_PAGE = 6;
 
-    /* --------- HARD LOCK LAYOUT (CRITICAL) ---------- */
-    pdfWrapper.style.width = "900px";
-    pdfWrapper.style.maxWidth = "900px";
-    pdfWrapper.style.transform = "none";
+// split items into chunks
+function chunkArray(arr, size) {
+    const chunks = [];
+    for (let i = 0; i < arr.length; i += size) {
+        chunks.push(arr.slice(i, i + size));
+    }
+    return chunks;
+}
 
-    const canvas = await html2canvas(pdfWrapper, {
-        scale: 3,                     // High quality
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: "#ffffff",
-        logging: false,
-        scrollX: 0,
-        scrollY: 0,
-        windowWidth: 900,             // FORCE DESKTOP WIDTH
-        windowHeight: pdfWrapper.scrollHeight
+// create one invoice page
+function createInvoicePage(data, itemsChunk, startSlNo) {
+    const page = document.querySelector(".invoice-card").cloneNode(true);
+
+    // fill static data
+    page.querySelector(".name").innerText = data.name || "";
+    page.querySelector(".address").innerText = data.address || "";
+    page.querySelector(".order").innerText = data.order || "";
+    page.querySelector(".o-date").innerText = data.oDate || "";
+    page.querySelector(".c-date").innerText = data.cDate || "";
+
+    // fill table
+    const tbody = page.querySelector("tbody");
+    tbody.innerHTML = "";
+
+    itemsChunk.forEach((item, i) => {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>${startSlNo + i}</td>
+            <td>${item.cap}</td>
+            <td>${item.qty || ""}</td>
+            <td>${item.type}</td>
+        `;
+        tbody.appendChild(tr);
     });
 
-    const imgData = canvas.toDataURL("image/jpeg", 1.0);
+    return page;
+}
 
+// MAIN PDF FUNCTION (called from button)
+async function downloadPDF() {
     const { jsPDF } = window.jspdf;
-
     const pdf = new jsPDF("p", "mm", "a4");
 
-    const pdfWidth = pdf.internal.pageSize.getWidth();   // 210mm
-    const pdfHeight = pdf.internal.pageSize.getHeight(); // 297mm
+    const chunks = chunkArray(data.items, ITEMS_PER_PAGE);
+    let slNo = 1;
 
-    const imgWidth = pdfWidth;
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
+    for (let i = 0; i < chunks.length; i++) {
+        const page = createInvoicePage(data, chunks[i], slNo);
+        slNo += chunks[i].length;
 
-    let heightLeft = imgHeight;
-    let position = 0;
+        // fixed-width wrapper (VERY IMPORTANT)
+        const wrapper = document.createElement("div");
+        wrapper.style.width = "794px"; // A4 width
+        wrapper.style.background = "#fff";
+        wrapper.appendChild(page);
 
-    /* --------- MULTI-PAGE SUPPORT ---------- */
-    pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
-    heightLeft -= pdfHeight;
+        document.body.appendChild(wrapper);
 
-    while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
-        heightLeft -= pdfHeight;
+        const canvas = await html2canvas(wrapper, {
+            scale: 2,
+            useCORS: true,
+            backgroundColor: "#ffffff"
+        });
+
+        const imgData = canvas.toDataURL("image/jpeg", 1.0);
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = 210;
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        if (i > 0) pdf.addPage();
+        pdf.addImage(imgData, "JPEG", 0, 0, pdfWidth, pdfHeight);
+
+        document.body.removeChild(wrapper);
     }
 
     pdf.save("invoice.pdf");
