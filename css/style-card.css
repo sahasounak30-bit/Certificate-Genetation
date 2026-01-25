@@ -251,31 +251,32 @@ th {
     background: #1d4ed8;
 }
 
-.top-section > h1{
+.top-section>h1 {
     color: rgb(207, 17, 17);
     font-size: 38px;
     font-weight: 700;
     letter-spacing: 2px;
-    font-family: "Cinzel",'Times New Roman', serif;
+    font-family: "Cinzel", 'Times New Roman', serif;
 }
 
-.mob-num{
+.mob-num {
     color: rgb(146, 9, 9);
     font-weight: bold;
 }
 
-.gstin{
+.gstin {
     font-weight: bold;
     color: black;
 }
-.red-border{
+
+.red-border {
     background-color: rgb(182, 15, 15);
     max-width: 900px;
     margin: auto;
     padding: 10px;
 }
 
-.main-border{
+.main-border {
     background-color: #1d4ed8;
     max-width: 900px;
     margin: auto;
@@ -283,11 +284,125 @@ th {
 }
 
 .o-date,
-.c-date{
+.c-date {
     display: inline;
     font-size: 15px;
     line-height: 1.6;
     font-weight: bold;
     margin: 0 4px;
     white-space: nowrap;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+}
+
+.invoice-card {
+    max-width: 700px;
+    background: #fff;
+    margin: auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #f0f0f0;
+}
+
+.totals {
+    margin-top: 20px;
+    text-align: right;
+}
+
+button {
+    margin-top: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+
+/* ================= MOBILE SAFE PREVIEW ================= */
+@media (max-width: 768px) {
+
+    /* Horizontal scroll container */
+    .preview-scroll {
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 20px;
+    }
+
+    /* Keep invoice fixed size */
+    .main-border,
+    .red-border,
+    .invoice-card {
+        min-width: 794px;
+        /* A4 width */
+    }
+
+    /* Center card inside scroll */
+    .preview-scroll>div {
+        margin: 0 auto;
+    }
+
+    /* Navbar stacks */
+    .nav-perview-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .btn-container {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn-container button {
+        flex: 1;
+        padding: 12px;
+    }
+}
+
+/* certificat-details */
+.certificat-details {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.certificatNoContainer,
+.issueDateContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: c;
+    align-items: center;
+}
+
+.certificatNoContainer>p>span,
+.issueDateContainer>p>span {
+    font-weight: 600;
+}
+
+.issueDateContainer {
+    justify-content: flex-end;
 }
