@@ -5,7 +5,8 @@ let pre = document.querySelector(".preview-btn");
 // add more items function
 let add = document.querySelector(".add-items");
 
-add.addEventListener("click", () => {
+add.addEventListener("click", (e) => {
+    e.preventDefault();
     let items = document.querySelector(".invoice-items-container");
     const box = document.createElement("div");
     box.className = "input-box";
@@ -13,12 +14,19 @@ add.addEventListener("click", () => {
             <div class="items-container">
                 <div class="item-field row">
                     <label>Capacity</label>
-                    <input type="text" class="cap" placeholder="Capacity">
+                    <input type="number" class="cap" placeholder="Capacity">
                 </div>
+
+                <div class="item-field row">
+                    <label>Quantity</label>
+                    <input type="number" class="qty" placeholder="Quantity">
+                </div>
+
                 <div class="item-field row">
                     <label>Type</label>
                     <input type="text" class="type" placeholder="Type">
                 </div>
+
                 <div class="delete-items">X</div>
             </div>
                     `;
@@ -39,10 +47,11 @@ function goToPreview() {
 
     document.querySelectorAll(".items-container").forEach(row => {
         let cap = row.querySelector(".cap")?.value.trim();
+        let qty = row.querySelector(".qty")?.value.trim();
         let type = row.querySelector(".type")?.value.trim();
 
-        if (cap || type) {
-            items.push({ cap, type });
+        if (cap || type || qty) {
+            items.push({ cap, qty, type });
         }
     });
 

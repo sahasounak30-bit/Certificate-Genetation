@@ -32,12 +32,6 @@ body {
     padding-bottom: 20px;
 }
 
-.top-section h1 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
 
 /* ABOUT */
 .about {
@@ -260,7 +254,9 @@ th {
 .top-section > h1{
     color: rgb(207, 17, 17);
     font-size: 38px;
-    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: "Cinzel",'Times New Roman', serif;
 }
 
 .mob-num{

@@ -38,6 +38,7 @@ data.items.forEach((item, index) => {
     tr.innerHTML = `
         <td>${index + 1}</td>
         <td>${item.cap}KG</td>
+        <td>${item.qty}</td>
         <td>${item.type}</td>
     `;
     tbody.appendChild(tr);
