@@ -300,7 +300,7 @@ body {
 }
 
 .invoice-card {
-    max-width: 700px;
+    max-width: 900px;
     background: #fff;
     margin: auto;
     padding: 25px;
@@ -405,4 +405,24 @@ button {
 
 .issueDateContainer {
     justify-content: flex-end;
+}
+
+
+.pdf-wrapper{
+    width: 900px;          /* FIXED PDF WIDTH */
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+}
+
+/* Mobile preview scroll */
+@media (max-width: 768px){
+    .preview-scroll{
+        overflow-x: auto;
+    }
+
+    .pdf-wrapper{
+        transform: scale(0.9);   /* visual only */
+        transform-origin: top center;
+    }
 }
