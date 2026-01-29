@@ -23,23 +23,38 @@ function createInvoicePage(data, itemsChunk, startSlNo) {
     page.querySelector(".o-date").innerText = data.oDate || "";
     page.querySelector(".c-date").innerText = data.cDate || "";
 
-    // fill table
     const tbody = page.querySelector("tbody");
     tbody.innerHTML = "";
 
+    // ✅ Add actual items
     itemsChunk.forEach((item, i) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${startSlNo + i}</td>
-            <td>${item.cap || 0} KG</td>
+            <td>${item.cap || ""} KG</td>
             <td>${item.qty || ""}</td>
-            <td>${item.type}</td>
+            <td>${item.type || ""}</td>
         `;
         tbody.appendChild(tr);
     });
 
+    // ✅ Fill remaining rows with blanks
+    const missingRows = ITEMS_PER_PAGE - itemsChunk.length;
+
+    for (let i = 0; i < missingRows; i++) {
+        const emptyTr = document.createElement("tr");
+        emptyTr.innerHTML = `
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        `;
+        tbody.appendChild(emptyTr);
+    }
+
     return page;
 }
+
 
 // MAIN PDF FUNCTION (called from button)
 async function downloadPDF() {
