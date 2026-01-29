@@ -64,7 +64,10 @@ async function downloadPDF() {
         const canvas = await html2canvas(wrapper, {
             scale: 2,
             useCORS: true,
-            backgroundColor: "#ffffff"
+            backgroundColor: "#ffffff",
+            windowWidth: 794,
+            scrollX: 0,
+            scrollY: 0
         });
 
         const imgData = canvas.toDataURL("image/jpeg", 1.0);
