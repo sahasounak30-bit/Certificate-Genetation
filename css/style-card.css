@@ -21,15 +21,12 @@ body {
     margin: auto;
     background-color: #ffffff;
     padding: 30px;
-    /* border-radius: 8px; */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 /* ---------------- TOP SECTION ---------------- */
 .top-section {
     text-align: center;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 20px;
 }
 
 
@@ -76,7 +73,7 @@ body {
 
 /* ---------------- MAIN SECTION ---------------- */
 .main-section {
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 /* CLIENT */
@@ -96,7 +93,7 @@ body {
 
 .client-name>p,
 .clitnt-address>p {
-    width: 70px;
+    width: 80px;
 }
 
 .name,
@@ -165,14 +162,17 @@ th {
 
 /* STAMP & SIGNATURE */
 .stamp-sing {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     justify-content: flex-end;
     height: 80px;
-    border-top: 1px dashed #aaa;
-    padding-top: 10px;
     font-size: 13px;
     color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* background-color: red; */
 }
 
 

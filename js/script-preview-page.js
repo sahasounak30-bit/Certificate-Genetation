@@ -37,8 +37,8 @@ data.items.forEach((item, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
         <td>${index + 1}</td>
-        <td>${item.cap}KG</td>
-        <td>${item.qty}</td>
+        <td>${item.cap || 0}KG</td>
+        <td>${item.qty || ""}</td>
         <td>${item.type}</td>
     `;
     tbody.appendChild(tr);

@@ -1,7 +1,7 @@
 // ================= PDF PAGINATION LOGIC =================
 
 // how many items per page
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 4;
 
 // split items into chunks
 function chunkArray(arr, size) {
@@ -14,7 +14,7 @@ function chunkArray(arr, size) {
 
 // create one invoice page
 function createInvoicePage(data, itemsChunk, startSlNo) {
-    const page = document.querySelector(".invoice-card").cloneNode(true);
+    const page = document.querySelector(".main-border").cloneNode(true);
 
     // fill static data
     page.querySelector(".name").innerText = data.name || "";
@@ -31,7 +31,7 @@ function createInvoicePage(data, itemsChunk, startSlNo) {
         const tr = document.createElement("tr");
         tr.innerHTML = `
             <td>${startSlNo + i}</td>
-            <td>${item.cap}</td>
+            <td>${item.cap || 0} KG</td>
             <td>${item.qty || ""}</td>
             <td>${item.type}</td>
         `;

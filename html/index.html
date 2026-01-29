@@ -17,9 +17,9 @@
             <div class="massage-container">
                 <p class="fe">This tool helps you to generate Certificate quickly.</p>
                 <h3 class="step">Steps</h2>
-                <p>• Add client details <br>
-                • Add Capacity & Type <br>
-                • Preview & download PDF</p>
+                    <p>• Add client details <br>
+                        • Add Capacity & Type <br>
+                        • Preview & download PDF</p>
             </div>
             <div class="note-container">
                 <h3 class="inp-note">Importent Note</h2>
@@ -36,7 +36,7 @@
         <span>
             <h1>Certificate Generator</h1>
             <p>Create professional Certificate Quickly</p>
-        </span> 
+        </span>
         <!-- add preview icon into btn  -->
         <button class="preview-btn" onclick="goToPreview()">Preview</button>
     </div>
@@ -51,7 +51,7 @@
             <form>
                 <div class="invoice-no">
                     <label>Certificate Number</label>
-                    <input type="text" class="certificatNo" name="invoice_no" placeholder="Invoice Number">
+                    <input type="text" class="certificatNo" name="invoice_no" placeholder="Certificate Number">
                 </div>
                 <div class="invoice-date">
                     <label>Issue Date</label>
@@ -77,10 +77,16 @@
                             <option value="Extinguisher Refilled">Extinguisher Refilled</option>
                             <option value="New Extinguisher Installation">New Extinguisher Installation</option>
                         </select>
-                        <label>Opening Date</label>
-                        <input type="date" class="oDate">
-                        <label>Closeing Date</label>
-                        <input type="date" class="cDate">
+                        <div class="date-container">
+                            <div class="oDate-container">
+                                <label>Opening Date</label>
+                                <input type="date" class="oDate">
+                            </div>
+                            <div class="cDate-container">
+                                <label>Closeing Date</label>
+                                <input type="date" class="cDate">
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -111,6 +117,7 @@
                 <div class="delete-items">X</div>
             </div>
         </div>
+        <button class="preview-btn" onclick="goToPreview()" style="margin-top: 10px; width: 100%; padding: 12px;">Preview</button>
 
 </body>
 <!-- logic | js -->
