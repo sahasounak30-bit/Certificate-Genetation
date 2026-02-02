@@ -8,7 +8,7 @@ const data = JSON.parse(localStorage.getItem("invoiceData"));
 
 if (!data) {
     alert("No invoice data found!");
-    window.location.href = "../html/index.html";
+    window.location.href = "index.html";
 }
 
 // Fill certificate details

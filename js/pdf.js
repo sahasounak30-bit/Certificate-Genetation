@@ -26,7 +26,7 @@ function createInvoicePage(data, itemsChunk, startSlNo) {
     const tbody = page.querySelector("tbody");
     tbody.innerHTML = "";
 
-    // ✅ Add actual items
+    //  Add actual items
     itemsChunk.forEach((item, i) => {
         const tr = document.createElement("tr");
         tr.innerHTML = `
@@ -38,7 +38,7 @@ function createInvoicePage(data, itemsChunk, startSlNo) {
         tbody.appendChild(tr);
     });
 
-    // ✅ Fill remaining rows with blanks
+    //  Fill remaining rows with blanks
     const missingRows = ITEMS_PER_PAGE - itemsChunk.length;
 
     for (let i = 0; i < missingRows; i++) {

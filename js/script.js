@@ -68,7 +68,7 @@ function goToPreview() {
     };
 
     localStorage.setItem("invoiceData", JSON.stringify(invoiceData));
-    window.location.href = "../html/preview-gen.html";
+    window.location.href = "html/preview-gen.html";
 }
 
 
