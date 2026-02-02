@@ -162,7 +162,7 @@ th {
 
 /* STAMP & SIGNATURE */
 .stamp-sing {
-    margin-top: 20px;
+    margin-top: 330px;
     display: flex;
     justify-content: flex-end;
     height: 80px;
@@ -171,7 +171,7 @@ th {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     /* background-color: red; */
 }
 
@@ -274,13 +274,14 @@ th {
     max-width: 900px;
     margin: auto;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .main-border {
     background-color: #1d4ed8;
     max-width: 900px;
     margin: auto;
-    padding: 30px;
+    padding: 20px;
 }
 
 .o-date,
@@ -336,6 +337,11 @@ button {
     cursor: pointer;
 }
 
+.white {
+    background-color: white;
+    padding: 4px;
+    border-radius: 10px;
+}
 
 /* ================= MOBILE SAFE PREVIEW ================= */
 @media (max-width: 768px) {
@@ -408,21 +414,23 @@ button {
 }
 
 
-.pdf-wrapper{
-    width: 900px;          /* FIXED PDF WIDTH */
+.pdf-wrapper {
+    width: 900px;
+    /* FIXED PDF WIDTH */
     max-width: 900px;
     margin: 0 auto;
     background: #fff;
 }
 
 /* Mobile preview scroll */
-@media (max-width: 768px){
-    .preview-scroll{
+@media (max-width: 768px) {
+    .preview-scroll {
         overflow-x: auto;
     }
 
-    .pdf-wrapper{
-        transform: scale(0.9);   /* visual only */
+    .pdf-wrapper {
+        transform: scale(0.9);
+        /* visual only */
         transform-origin: top center;
     }
 }
