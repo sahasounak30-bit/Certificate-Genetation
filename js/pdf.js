@@ -14,7 +14,7 @@ function chunkArray(arr, size) {
 
 // create one invoice page
 function createInvoicePage(data, itemsChunk, startSlNo) {
-    const page = document.querySelector(".main-border").cloneNode(true);
+    const page = document.querySelector(".outerWhiteBorder").cloneNode(true);
 
     // fill static data
     page.querySelector(".name").innerText = data.name || "";

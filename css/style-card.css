@@ -27,6 +27,9 @@ body {
 /* ---------------- TOP SECTION ---------------- */
 .top-section {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -35,6 +38,7 @@ body {
     font-size: 13px;
     line-height: 1.6;
     color: #444;
+    width: 90%;
     margin-bottom: 15px;
 }
 
@@ -56,9 +60,6 @@ body {
 }
 
 /* CERTIFICATE TEXT */
-.certificat-text {
-    margin-top: 15px;
-}
 
 .certificat-text p:first-child {
     font-weight: bold;
@@ -94,6 +95,12 @@ body {
 .client-name>p,
 .clitnt-address>p {
     width: 80px;
+}
+
+.name,
+.address{
+    font-size: 16px;
+    font-style: italic;
 }
 
 .name,
@@ -138,7 +145,7 @@ th {
 .closeing-date {
     display: flex;
     gap: 5px;
-    margin-bottom: 8px;
+    margin-bottom: 3px;
 }
 
 /* ---------------- FOOTER SECTION ---------------- */
@@ -151,7 +158,6 @@ th {
 /* DECLARATION */
 .declaration p:first-child {
     font-weight: 700;
-    margin-bottom: 8px;
 }
 
 .declaration p:last-child {
@@ -162,7 +168,7 @@ th {
 
 /* STAMP & SIGNATURE */
 .stamp-sing {
-    margin-top: 30px;
+    margin-top: 20px;
     display: flex;
     justify-content: flex-end;
     height: 80px;
@@ -251,10 +257,10 @@ th {
     background: #1d4ed8;
 }
 
-.top-section>h1 {
+.top-section>p {
     color: rgb(207, 17, 17);
-    font-size: 38px;
-    font-weight: 700;
+    font-size: 42px;
+    font-weight: 900;
     letter-spacing: 2px;
     font-family: "Cinzel", 'Times New Roman', serif;
 }
@@ -282,6 +288,10 @@ th {
     max-width: 900px;
     margin: auto;
     padding: 20px;
+}
+.outerWhiteBorder{
+    padding: 10px;
+    background-color: white;
 }
 
 .o-date,
@@ -388,7 +398,6 @@ button {
 /* certificat-details */
 .certificat-details {
     width: 100%;
-    margin-bottom: 10px;
     height: 40px;
     display: flex;
     justify-content: center;
